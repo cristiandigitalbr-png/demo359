@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudio Brezzo | Estudio Contable</title>
+<meta name="description" content="Estudio Contable Cr. José Luis Brezzo. Servicios contables, impositivos, societarios y negocios inmobiliarios. Mattaldi, Córdoba.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bordo: #7a1c2e;
+    --bordo-dark: #5a1220;
+    --bordo-light: #9e2d42;
+    --beige: #f5f0eb;
+    --beige-dark: #ede5da;
+    --white: #ffffff;
+    --dark: #1a1410;
+    --gray: #6b6460;
+    --light-gray: #ddd8d2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    color: var(--dark);
+    background: var(--beige);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245,240,235,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(122,28,46,0.12);
+  }
+
+  .nav-logo img {
+    height: 52px;
+    object-fit: contain;
+    filter: contrast(1.1);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark);
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--bordo); }
+
+  .nav-cta {
+    background: var(--bordo) !important;
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 2px;
+  }
+
+  .nav-cta:hover { background: var(--bordo-dark) !important; }
+
+  /* HERO */
+  .hero {
+    height: 75vh;
+    min-height: 520px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('WhatsApp Image 2026-05-24 at 20.37.56 (3).jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.25) saturate(0.8);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(90,18,32,0.4) 0%, rgba(26,20,16,0.3) 60%, rgba(26,20,16,0.6) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    padding: 50px 30px 0;
+    animation: fadeUp 1s ease-out;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-logo {
+    margin-bottom: 32px;
+  }
+
+  .hero-logo img {
+    height: 90px;
+    object-fit: contain;
+    filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(0,0,0,0.4));
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(245,220,200,0.7);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 400;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .hero-title span {
+    color: #e8b4a0;
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .hero-divider {
+    width: 50px;
+    height: 1px;
+    background: rgba(232,180,160,0.6);
+    margin: 0 auto 36px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--bordo);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: var(--bordo-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(122,28,46,0.4);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* SECTION STYLES */
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--bordo);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--bordo);
+    margin-bottom: 36px;
+  }
+
+  /* ABOUT */
+  .about-wrap {
+    background: white;
+    padding: 80px 60px;
+  }
+
+  .about {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--gray);
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  .about-image {
+    position: relative;
+    height: 440px;
+    border-radius: 4px;
+    overflow: visible;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 12px 40px rgba(122,28,46,0.15), 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .about-image::before {
+    content: '';
+    position: absolute;
+    top: 14px; left: 14px; right: -14px; bottom: -14px;
+    background: rgba(122,28,46,0.08);
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .about-image-frame {
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .about-image-accent {
+    position: absolute;
+    bottom: -14px;
+    right: -14px;
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--bordo);
+    border-radius: 2px;
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  /* SERVICIOS */
+  .servicios-wrap {
+    background: var(--beige);
+    padding: 80px 60px;
+  }
+
+  .servicios {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .servicios-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .servicios-header .section-divider {
+    margin: 0 auto 0;
+  }
+
+  .servicios-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: start;
+    }
+  }
+
+  .servicio-card {
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    padding: 32px 28px;
+    border-left: 3px solid var(--bordo);
+    transition: all 0.3s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    text-align: center;
+  }
+
+  .servicio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 32px rgba(122,28,46,0.1);
+  }
+
+  .servicio-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(122,28,46,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    background: rgba(122,28,46,0.04);
+  }
+
+  .servicio-nombre {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bordo);
+    margin-bottom: 8px;
+  }
+
+  .servicio-desc {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* MID BANNER */
+  .mid-banner {
+    position: relative;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .mid-banner-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('WhatsApp Image 2026-05-24 at 20.37.56 (3).jpeg');
+    background-size: cover;
+    background-position: center 40%;
+    filter: brightness(0.15) saturate(0.6);
+  }
+
+  .mid-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(90,18,32,0.7), rgba(26,20,16,0.4));
+  }
+
+  .mid-banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 40px;
+  }
+
+  .mid-banner-content .section-label {
+    color: #e8b4a0;
+    letter-spacing: 5px;
+  }
+
+  .mid-banner-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(232,180,160,0.5);
+    margin: 0 auto 20px;
+  }
+
+  .mid-banner-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 44px);
+    font-weight: 400;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .mid-banner-content p {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin-bottom: 28px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  /* CONTACTO */
+  .contacto-wrap {
+    background: var(--beige);
+    padding: 70px 24px;
+  }
+
+  .contacto {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contacto .section-divider {
+    margin: 0 auto 36px;
+  }
+
+  .contacto-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 8px;
+  }
+
+  .contacto-item {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  .contacto-item:last-child { border-bottom: none; }
+
+  .contacto-item-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 6px;
+  }
+
+  .contacto-item-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--dark);
+  }
+
+  .contacto-item-value a {
+    color: var(--bordo);
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--bordo-dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 44px 24px;
+  }
+
+  .footer-logo img {
+    height: 48px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+    margin-bottom: 16px;
+  }
+
+  .footer-divider {
+    width: 36px;
+    height: 1px;
+    background: rgba(232,180,160,0.4);
+    margin: 0 auto 18px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .about-wrap { padding: 50px 20px; }
+    .about { grid-template-columns: 1fr; gap: 36px; }
+    .about-image { height: 280px; }
+    .servicios-wrap { padding: 50px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-logo">
+    <img src="WhatsApp_Image_2026-05-24_at_20_37_56.jpeg" alt="Estudio Brezzo"
+         onerror="this.outerHTML='<span style=\'font-family:Playfair Display,serif;font-size:20px;font-weight:700;color:#7a1c2e;letter-spacing:1px;\'>Estudio Brezzo</span>'">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="tel:3583490741" class="nav-cta">Llamar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img src="WhatsApp_Image_2026-05-24_at_20_37_56.jpeg" alt="Estudio Brezzo">
+    </div>
+    <div class="hero-eyebrow">Mattaldi · Córdoba</div>
+    <h1 class="hero-title">Estudio <span>Brezzo</span></h1>
+    <div class="hero-subtitle">Contable · Impositivo · Societario</div>
+    <div class="hero-divider"></div>
+    <div class="hero-buttons">
+      <a href="#contacto" class="btn-primary">Contactarse</a>
+      <a href="#servicios" class="btn-outline">Ver Servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="about-wrap" id="nosotros">
+  <div class="about">
+    <div class="about-text">
+      <div class="section-label" style="text-align:center;">Quiénes Somos</div>
+      <h2 class="section-title" style="text-align:center; font-size:clamp(22px,3vw,36px);">Profesionalismo y confianza al servicio de su empresa</h2>
+      <div class="section-divider" style="margin:0 auto 32px;"></div>
+      <p>El Estudio Brezzo brinda asesoramiento contable, impositivo y societario con más de años de experiencia en la región, acompañando a empresas y particulares en cada etapa de su actividad.</p>
+      <p>Contamos también con servicios en negocios inmobiliarios a cargo de la Lic. Maria J. Julian, CPI 7143, para una atención integral a nuestros clientes.</p>
+    </div>
+    <div class="about-image">
+      <img src="WhatsApp Image 2026-05-24 at 20.37.56 (3).jpeg" alt="Estudio Brezzo">
+      <div class="about-image-frame"></div>
+      <div class="about-image-accent"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="servicios-wrap" id="servicios">
+  <div class="servicios">
+    <div class="servicios-header">
+      <div class="section-label">Lo que ofrecemos</div>
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <div class="servicio-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a1c2e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="servicio-nombre">Contabilidad</div>
+        <div class="servicio-desc">Registración contable, balances y estados financieros para empresas y profesionales independientes.</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a1c2e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="servicio-nombre">Asesoramiento Impositivo</div>
+        <div class="servicio-desc">Liquidación de impuestos nacionales y provinciales, AFIP, ARBA y organismos recaudadores.</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a1c2e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="servicio-nombre">Asesoramiento Societario</div>
+        <div class="servicio-desc">Constitución y gestión de sociedades, contratos, actas y trámites ante organismos públicos.</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a1c2e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="servicio-nombre">Negocios Inmobiliarios</div>
+        <div class="servicio-desc">Compra, venta y alquiler de propiedades. Lic. Maria J. Julian · CPI 7143.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MID BANNER -->
+<div class="mid-banner">
+  <div class="mid-banner-bg"></div>
+  <div class="mid-banner-overlay"></div>
+  <div class="mid-banner-content">
+    <div class="section-label" style="color:#e8b4a0; letter-spacing:5px;">Contacto Directo</div>
+    <div class="mid-banner-divider"></div>
+    <h2>¿Necesita asesoramiento?</h2>
+    <p>Estamos disponibles para atender su consulta de manera personalizada.</p>
+    <a href="https://wa.me/543583490741" target="_blank" class="btn-primary" style="background:rgba(0,0,0,0.45); border:1px solid rgba(232,180,160,0.6); color:#e8c8b8; display:inline-flex; align-items:center; gap:10px; backdrop-filter:blur(4px);">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      Escribinos por WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<div class="contacto-wrap" id="contacto">
+  <div class="contacto">
+    <div class="section-label">Contacto</div>
+    <h2 class="section-title" style="font-size:clamp(26px,3.5vw,40px);">Encontranos</h2>
+    <div class="section-divider"></div>
+    <div class="contacto-items">
+      <div class="contacto-item">
+        <div class="contacto-item-label">Dirección</div>
+        <div class="contacto-item-value">Av. San Martín 580, Mattaldi, Cba.</div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-item-label">Teléfono / WhatsApp</div>
+        <div class="contacto-item-value">
+          <a href="tel:3583490741">3583-490741</a>
+        </div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-item-label">Email</div>
+        <div class="contacto-item-value">
+          <a href="mailto:jlbrezzo@hotmail.com" style="font-size:15px;">jlbrezzo@hotmail.com</a>
+        </div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-item-label">Profesionales</div>
+        <div class="contacto-item-value" style="font-size:17px;">Cr. José Luis Brezzo<br><span style="font-size:14px; font-family:Raleway,sans-serif; color:var(--gray);">Lic. Maria J. Julian · CPI 7143</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="WhatsApp_Image_2026-05-24_at_20_37_56.jpeg" alt="Estudio Brezzo"
+         onerror="this.outerHTML='<div style=\'font-family:Playfair Display,serif;font-size:18px;color:rgba(255,255,255,0.8);margin-bottom:16px;\'>Estudio Brezzo</div>'">
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-text">
+    Av. San Martín 580, Mattaldi, Córdoba · Tel: 3583-490741<br>
+    <span style="font-size:11px; color:rgba(255,255,255,0.3); margin-top:10px; display:block;">© 2025 Estudio Brezzo · Todos los derechos reservados</span>
+  </div>
+</footer>
+
+</body>
+</html> 
